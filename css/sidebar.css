@@ -29,9 +29,27 @@
 }
 
 #search-bus {
-    height: 50vh;
-    overflow-y: scroll;
+    height: 25vh;
+    /*overflow-y: scroll;*/
     overflow-x: hidden;
+}
+
+#buses {
+    height: 25vh;
+    /*overflow-y: scroll;*/
+    overflow-x: hidden;
+}
+
+#noBus{
+    text-align: center;
+}
+
+#noBus h2{
+    font-size: 15px;
+}
+
+#noBus h3{
+    font-size: 12px;
 }
 
 #search-bus  div ul{
@@ -42,9 +60,22 @@
     display: inline;
 }
 
-#search-bus  div ul li input{
+#search-bus  div ul li img{
     float: right;
 }
+
+#buses  div ul{
+    padding: 10px;
+}
+
+#buses  div ul li{
+    display: inline;
+}
+
+#buses  div ul li img{
+    float: right;
+}
+
 
 .sid-menu-main:hover {
     background-color: #34495e;

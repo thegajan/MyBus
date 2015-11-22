@@ -13,6 +13,8 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <style>
         html, body {
             height: 100%;
