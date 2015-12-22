@@ -47,7 +47,8 @@
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 37.7749295, lng: -122.4194155},
             zoom: 6,
-            disableDefaultUI: true
+            disableDefaultUI: true,
+            zoomControl: true
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -58,9 +59,13 @@
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-
-                infoWindow.setPosition(pos);
-                infoWindow.setContent('Your Are Here.');
+                var marker = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    title: 'You are Here.'
+                });
+//                infoWindow.setPosition(pos);
+//                infoWindow.setContent('Your Are Here.');
                 map.setCenter(pos);
                 map.setZoom(17);
             }, function () {

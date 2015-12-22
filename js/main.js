@@ -14,53 +14,32 @@ $(document).ready(function () {
             $('#noBus').css('display', 'block');
         }
     }
-    //function orderBus (list) {
-    //    if (list == '#buses' && $(list).children().length > 2) {
-    //        $(list + " div").sort(function (a, b) {
-    //            return parseInt(a.id) > parseInt(b.id);
-    //        }).each(function () {
-    //            var elem = $(this);
-    //            elem.remove();
-    //            $(elem).appendTo("#search-bus");
-    //        })
-    //    }
-    //    else if ($(list).children().length >2){
-    //        $(list + " div").sort(function (a, b) {
-    //            return parseInt(a.id) > parseInt(b.id);
-    //        }).each(function () {
-    //            var elem = $(this);
-    //            elem.remove();
-    //            $(elem).appendTo("#search-bus");
-    //        })
-    //    }
-    //}
-    //function orderBus (list) {
-    //        $(list + " div").sort(function (a, b) {
-    //            return parseInt(a.id) > parseInt(b.id);
-    //        }).each(function () {
-    //            var elem = $(this);
-    //            elem.remove();
-    //            $(elem).appendTo(list);
-    //        })
-    //
-    //}
+    function orderBus(someVar) {
+        var main = document.getElementById(someVar);
+
+        [].map.call(main.children, Object).sort(function (a, b) {
+            return +a.id - +b.id;
+        }).forEach(function (elem) {
+            main.appendChild(elem);
+        });
+    }
     $('#search-bus div').click(function () {
+        var angle = 0;
+        var img = $(this).find('img');
         if ($(this).parent().attr("id") == "search-bus") {
             $(this).detach().appendTo('#buses');
             noBus();
-            //orderBus('#buses');
+            angle += 45;
+            $(img).css('transform','rotate(' + angle + 'deg)');
+            orderBus('buses');
         }
         else {
             $(this).detach().appendTo('#search-bus');
             noBus();
-            //orderBus('#search-bus');
+            $(img).css('transform','rotate(' + angle + 'deg)');
+            orderBus('search-bus');
         }
     });
-    //(function($){
-    //    $(window).load(function(){
-    //        $("#search-bus").mCustomScrollbar();
-    //    });
-    //})(jQuery);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {

@@ -29,13 +29,14 @@ function getLong($line, $data){
         $num = preg_replace("/[^0-9]/","",$otherArray);
         if($line == $num){
             $address = $a['MonitoredVehicleJourney']['MonitoredCall']['StopPointName'];
-            $url = "http://maps.google.com/maps/api/geocode/json?address=" . $address . "&sensor=false";
+            $url = "https://maps.google.com/maps/api/geocode/json?address=" . $address . "&sensor=false&key=AIzaSyAiG1PsTYUUvq3ROe2ZNFORXA1_KO7z-QM";
             $url = str_replace(' ', '+', $url);
             $longVal = download_page($url);
             $latVal = json_decode($longVal, true);
-//            print_r($latVal);
+            print_r($latVal);
             $ray = $latVal['results'][0]['geometry']['location'];
-            echo $line;
+            echo $line . "\n";
+            echo $address . "\n";
             print_r($ray);
         }else{
             continue;
