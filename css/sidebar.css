@@ -29,73 +29,75 @@
 }
 
 #search-bus {
-    height: 25vh;
+    height: 39vh;
     /*overflow-y: scroll;*/
     overflow-x: hidden;
 }
 
 #buses {
-    height: 25vh;
+    height: 30vh;
     /*overflow-y: scroll;*/
     overflow-x: hidden;
 }
 
-#noBus{
+#noBus {
     text-align: center;
 }
 
-#noBus h2{
+#noBus h2 {
     font-size: 15px;
 }
 
-#noBus h3{
+#noBus h3 {
     font-size: 12px;
 }
 
-#search-bus  div ul{
+#search-bus div ul {
     padding: 10px;
 }
 
-#search-bus  div ul li{
+#search-bus div ul li {
     display: inline;
 }
 
-#search-bus  div ul li img{
+#search-bus div ul li img {
     float: right;
 }
 
-#buses  div ul{
+#buses div ul {
     padding: 10px;
 }
 
-#buses  div ul li{
+#buses div ul li {
     display: inline;
 }
 
-#buses  div ul li img{
+#buses div ul li img {
     float: right;
 }
-
 
 .sid-menu-main:hover {
     background-color: #34495e;
     cursor: pointer;
 }
 
+/*#side-links-bottom {*/
+/*width: 270px;*/
+/*position: absolute;*/
+/*bottom: 0;*/
+/*}*/
 
-#side-links-bottom {
-    width: 270px;
-    position: absolute;
-    bottom: 0;
-}
-
-#side-links-bottom li {
-    width: 270px;
-}
+/*#side-links-bottom li {*/
+/*width: 270px;*/
+/*}*/
 
 .sidebar-icons {
     margin-top: -5px;
     width: 25px;
     height: 25px;
+}
+
+#search-bus:hover, #buses:hover {
+    cursor: pointer;
 }
 

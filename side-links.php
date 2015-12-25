@@ -461,10 +461,10 @@
                 </div>
             </div>
         </ul>
-        <ul id="side-links-bottom">
-            <li class="sid-menu-main"><img src="images/ios-gear-outline.svg" class="sidebar-icons"> Settings</li>
-            <li class="sid-menu-main"><img src="images/ios-help-outline.svg" class="sidebar-icons"> Help</li>
-            <li class="sid-menu-main"><img src="images/ios-information-outline.svg" class="sidebar-icons"> About</li>
-        </ul>
+<!--        <ul id="side-links-bottom">-->
+<!--            <li class="sid-menu-main"><img src="images/ios-gear-outline.svg" class="sidebar-icons"> Settings</li>-->
+<!--            <li class="sid-menu-main"><img src="images/ios-help-outline.svg" class="sidebar-icons"> Help</li>-->
+<!--            <li class="sid-menu-main"><img src="images/ios-information-outline.svg" class="sidebar-icons"> About</li>-->
+<!--        </ul>-->
     </div>
 </div>

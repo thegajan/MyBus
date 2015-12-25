@@ -13,8 +13,6 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <style>
         html, body {
             height: 100%;
@@ -29,18 +27,29 @@
     </style>
 </head>
 <nav class="navbar" id="header-nav">
-    <div class="container-fluid">
+    <div class="container-fluid divs">
         <div class="navbar-header">
             <a class="navbar-brand" id="header-nav-logo"> <img
                     src="images/navicon.svg" id="header-nav-navicon">
                 MyBus</a>
         </div>
     </div>
+    <div id="dropDown" class="divs"><img src="images/chevron-down.svg" id="arrowDown" class="arrow">
+<!--        <img src="images/chevron-up.svg"-->
+<!--                                                                                            id="arrowUp" class="arrow">-->
+    </div>
+    <div class="drop-down bubble" id="add-drop-down">
+        <ul id="dropDownUl">
+            <li class="borderImgBottom"><img src="images/ios-gear-outline.svg" class="dropdownImg"> Settings</li>
+            <li class="borderImgBottom borderImgTop"><img src="images/ios-help-outline.svg" class="dropdownImg"> Help</li>
+            <li class="borderImgTop"><img src="images/ios-information-outline.svg" class="dropdownImg"> About</li>
+        </ul>
+    </div>
 </nav>
 
 <body>
 <div id="map"></div>
-<?php include_once "side-links.php";?>
+<?php include_once "side-links.php"; ?>
 
 <script>
     function initMap() {
@@ -85,7 +94,8 @@
     }
 
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
         async defer>
 </script>
 </body>

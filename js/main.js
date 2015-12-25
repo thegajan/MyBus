@@ -23,6 +23,36 @@ $(document).ready(function () {
             main.appendChild(elem);
         });
     }
+    $( ".arrow" ).click(function() {
+        $( "#add-drop-down" ).toggle();
+        //$("#arrowDown").toggle();
+        //$("#arrowUp").toggle();
+    });
+    //function getCookie(cName) {
+    //    var cVal = document.cookie.match('(?:^|;) ?' + cName + '=([^;]*)(?:;|$)');
+    //    if (!cVal) {
+    //        return "";
+    //    } else {
+    //        return cVal[1];
+    //    }
+    //}
+    //var cookie = getCookie("busList");
+    //if (!cookie) {
+    //    var busList = [],
+    //    json_str = JSON.stringify(busList);
+    //    allCookies = document.cookie;
+    //    document.cookie = "busList=" + json_str;
+    //    //docCookies.setItem("busList", 31536e3);
+    //} else {
+    //    // cookie exists
+    //}
+    //function addBusCookie (busNum){
+    //    if($.inArray(busNum, array)) == 0){
+    //
+    //    }else {
+    //
+    //    }
+    //}
     $('#search-bus div').click(function () {
         var angle = 0;
         var img = $(this).find('img');
@@ -40,12 +70,12 @@ $(document).ready(function () {
             orderBus('search-bus');
         }
     });
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
-            console.log(xhttp.responseText);
-        }
-    };
-    xhttp.open("GET", "http://api.511.org/transit/StopMonitoring?api_key=c4f75444-cda2-412c-b987-8667c2eb5385&agency=vta&format=json", true);
-    xhttp.send();
+    //var xhttp = new XMLHttpRequest();
+    //xhttp.onreadystatechange = function() {
+    //    if (xhttp.readyState == 4 && xhttp.status == 200) {
+    //        console.log(xhttp.responseText);
+    //    }
+    //};
+    //xhttp.open("GET", "http://api.511.org/transit/StopMonitoring?api_key=c4f75444-cda2-412c-b987-8667c2eb5385&agency=vta&format=json", true);
+    //xhttp.send();
 });
