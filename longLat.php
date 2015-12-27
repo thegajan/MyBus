@@ -17,12 +17,14 @@ function download_page($path){
 }
 
 $sXML = download_page('http://api.511.org/transit/StopMonitoring?api_key=c4f75444-cda2-412c-b987-8667c2eb5385&agency=vta&format=json');
+//$sXML = file_get_contents('sample.json');
 $oXML = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE',"\357\273\277" . $sXML);
 //print_r(json_decode($oXML));
 $addJson = json_decode($oXML, true);
 $filterJson = $addJson['ServiceDelivery']['StopMonitoringDelivery']['MonitoredStopVisit'];
 //print_r($filterJson);
 function getLong($line, $data){
+//    $someArray = array();
     foreach($data as $value => $a){
 //        print_r($a);
         $otherArray = $a['MonitoredVehicleJourney']['LineRef'];
@@ -33,18 +35,25 @@ function getLong($line, $data){
             $url = str_replace(' ', '+', $url);
             $longVal = download_page($url);
             $latVal = json_decode($longVal, true);
-            print_r($latVal);
+//            print_r($latVal);
             $ray = $latVal['results'][0]['geometry']['location'];
-            echo $line . "\n";
-            echo $address . "\n";
-            print_r($ray);
+            $b = array('busNum' => $line, 'longLat' => $ray);
+            return $b;
+//            array_push($someArray, $b);
+//            echo $line . "\n";
+//            echo $address . "\n";
+//            print_r($ray);
         }else{
             continue;
         }
     }
 }
-//foreach($json as $a){
-    getLong(22, $filterJson);
-//}
+foreach($json as $a){
+    $finalJsons = getLong($a, $filterJson);
+    $finalJson = array_push($finalJson, $finalJsons);
+//    $finalJson = json_encode($someArray);
+}
+$jjson = json_encode($finalJson);
+echo $jjson;
 ?>
 

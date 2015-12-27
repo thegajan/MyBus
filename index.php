@@ -13,6 +13,7 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/d3.min.js"></script>
     <style>
         html, body {
             height: 100%;
@@ -59,6 +60,7 @@
             disableDefaultUI: true,
             zoomControl: true
         });
+        
         var infoWindow = new google.maps.InfoWindow({map: map});
 
         // Try HTML5 geolocation.
