@@ -1,8 +1,7 @@
 <?php
-//header('Content-type: application/json');
-//$json = file_get_contents("php://input");
-//$json = json_decode($json, true);
-$json = [22];
+header('Content-type: application/json');
+$json = file_get_contents("php://input");
+$json = json_decode($json, true);
 $finalJson = array();
 function download_page($path)
 {
@@ -24,33 +23,26 @@ $oXML = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', "\357\273\277" . $sXML);
 //print_r(json_decode($oXML));
 $addJson = json_decode($oXML, true);
 $filterJson = $addJson['ServiceDelivery']['StopMonitoringDelivery']['MonitoredStopVisit'];
-//$filterJson = $addJson['ServiceDelivery']['StopMonitoringDelivery'];
 //print_r($filterJson);
-$someArray = array();
 function getLong($line, $data)
 {
-//    $poo = array(0=>'ugh');
+//    $someArray = array();
+    $b = array();
     foreach ($data as $value => $a) {
-//        echo '<pre>'; print_r($a); echo '</pre>'; echo  'pooooo';
+//        print_r($a);
         $otherArray = $a['MonitoredVehicleJourney']['LineRef'];
-//        echo '<pre>'; print_r($otherArray); echo '</pre>'; echo  'pooooo';
         $num = preg_replace("/[^0-9]/", "", $otherArray);
-//        echo $num;
         if ($line == $num) {
-//            echo $line;
-//            $poo = array(0=>'hi');
             $address = $a['MonitoredVehicleJourney']['MonitoredCall']['StopPointName'];
-//            echo $address;
             $url = "https://maps.google.com/maps/api/geocode/json?address=" . $address . "&sensor=false&key=AIzaSyAiG1PsTYUUvq3ROe2ZNFORXA1_KO7z-QM";
             $url = str_replace(' ', '+', $url);
             $longVal = download_page($url);
             $latVal = json_decode($longVal, true);
 //            print_r($latVal);
             $ray = $latVal['results'][0]['geometry']['location'];
-//            print_r($ray);
             $b = array('busNum' => $line, 'longLat' => $ray);
-//            return $b;
-            array_push($someArray, $b);
+            echo $b;
+//            array_push($someArray, $b);
 //            echo $line . "\n";
 //            echo $address . "\n";
 //            print_r($ray);
@@ -58,18 +50,15 @@ function getLong($line, $data)
             continue;
         }
     }
-//    print_r($someArray);
-//    return $someArray;
 }
 
-foreach($json as $a){
-//error_reporting(E_ALL);
-//getLong(22, $filterJson);
-    getLong($a, $filterJson);
+getLong(22, $oXML);
+//foreach($json as $a){
+//    $finalJsons = getLong($a, $filterJson);
 //    $finalJson = array_push($finalJson, $finalJsons);
-//    $finalJsonss = json_encode($);
-}
-$jjson = json_encode($someArray);
-print_r($jjson);
+////    $finalJson = json_encode($someArray);
+//}
+//$jjson = json_encode($finalJson);
+//echo $jjson;
 ?>
 

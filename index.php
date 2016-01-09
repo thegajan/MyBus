@@ -13,19 +13,9 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="js/d3.min.js"></script>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            z-index: 999;
-            height: 100%;
-        }
-    </style>
 </head>
 <nav class="navbar" id="header-nav">
     <div class="container-fluid divs">
@@ -49,56 +39,9 @@
 </nav>
 
 <body>
-<div id="map"></div>
+<!--<div id="map"></div>-->
 <?php include_once "side-links.php"; ?>
-
-<script>
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 37.7749295, lng: -122.4194155},
-            zoom: 6,
-            disableDefaultUI: true,
-            zoomControl: true
-        });
-        
-        var infoWindow = new google.maps.InfoWindow({map: map});
-
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                var marker = new google.maps.Marker({
-                    position: pos,
-                    map: map,
-                    title: 'You are Here.'
-                });
-//                infoWindow.setPosition(pos);
-//                infoWindow.setContent('Your Are Here.');
-                map.setCenter(pos);
-                map.setZoom(17);
-            }, function () {
-                handleLocationError(true, infoWindow, map.getCenter());
-            });
-        } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map.getCenter());
-        }
-    }
-
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-            'Error: The Geolocation service failed.' :
-            'Error: Your browser doesn\'t support geolocation.');
-    }
-
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-        async defer>
-</script>
+<div id="map_canvas"></div>
+<script src="js/script.js"></script>
 </body>
 </html>
