@@ -1,7 +1,7 @@
 var markers = [
-  [22, -14.2350040,-51.9252800],
+  [22, 37.322743,-122.047731],
 	[34, -34.028249, 151.157507],
- 	[64, 39.0119020,-98.4842460],
+ 	[64, 37.350531,-121.871963],
  	[50, 48.8566140,2.3522220],
 	[152, 38.7755940,-9.1353670],
   [12, 12.0733335, 52.8234367],
@@ -85,17 +85,17 @@ function generateIcon(number, callback) {
     .attr('cx', '27.2')
     .attr('cy', '27.2')
     .attr('r', '21.2')
-    .style('fill', '#2063C6');
+    .style('fill', '#2980b9');
 
-  var path = svg.append('path')
-    .attr('d', 'M27.2,0C12.2,0,0,12.2,0,27.2s12.2,27.2,27.2,27.2s27.2-12.2,27.2-27.2S42.2,0,27.2,0z M6,27.2 C6,15.5,15.5,6,27.2,6s21.2,9.5,21.2,21.2c0,11.7-9.5,21.2-21.2,21.2S6,38.9,6,27.2z')
-    .attr('fill', '#FFFFFF');
+  //var path = svg.append('path')
+  //  .attr('d', 'M27.2,0C12.2,0,0,12.2,0,27.2s12.2,27.2,27.2,27.2s27.2-12.2,27.2-27.2S42.2,0,27.2,0z M6,27.2 C6,15.5,15.5,6,27.2,6s21.2,9.5,21.2,21.2c0,11.7-9.5,21.2-21.2,21.2S6,38.9,6,27.2z')
+  //  .attr('fill', '#FFFFFF');
 
   var text = svg.append('text')
     .attr('dx', 27)
     .attr('dy', 32)
     .attr('text-anchor', 'middle')
-    .attr('style', 'font-size:' + fontSize + 'px; fill: #FFFFFF; font-family: Arial, Verdana; font-weight: bold')
+    .attr('style', 'font-size:' + fontSize + 'px; fill: #FFFFFF; font-family: Open Sans, Arial, sans-serif; font-weight: bold')
     .text(number);
 
   var svgNode = svg.node().parentNode.cloneNode(true),
