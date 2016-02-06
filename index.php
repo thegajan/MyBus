@@ -14,7 +14,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&v=3"></script>
     <script type="text/javascript" src="js/d3.min.js"></script>
 </head>
 <nav class="navbar" id="header-nav">

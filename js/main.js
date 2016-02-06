@@ -7,13 +7,14 @@ $(document).ready(function () {
             visible.animate({"left": "0px"}, "fast").addClass('visible');
         }
     });
-    function noBus(){
+    function noBus() {
         if (document.getElementById('buses').childNodes.length > 3) {
             $('#noBus').css('display', 'none');
         } else {
             $('#noBus').css('display', 'block');
         }
     }
+
     function orderBus(someVar) {
         var main = document.getElementById(someVar);
 
@@ -23,8 +24,9 @@ $(document).ready(function () {
             main.appendChild(elem);
         });
     }
-    $( ".arrow" ).click(function() {
-        $( "#add-drop-down" ).toggle();
+
+    $(".arrow").click(function () {
+        $("#add-drop-down").toggle();
         //$("#arrowDown").toggle();
         //$("#arrowUp").toggle();
     });
@@ -60,16 +62,17 @@ $(document).ready(function () {
             $(this).detach().appendTo('#buses');
             noBus();
             angle += 45;
-            $(img).css('transform','rotate(' + angle + 'deg)');
+            $(img).css('transform', 'rotate(' + angle + 'deg)');
             orderBus('buses');
         }
         else {
             $(this).detach().appendTo('#search-bus');
             noBus();
-            $(img).css('transform','rotate(' + angle + 'deg)');
+            $(img).css('transform', 'rotate(' + angle + 'deg)');
             orderBus('search-bus');
         }
     });
+
 
     //var xhttp = new XMLHttpRequest();
     //xhttp.onreadystatechange = function() {
