@@ -64,12 +64,22 @@ $(document).ready(function () {
             angle += 45;
             $(img).css('transform', 'rotate(' + angle + 'deg)');
             orderBus('buses');
+            addBusToList(this.id);
+            console.log(lon);
         }
         else {
             $(this).detach().appendTo('#search-bus');
             noBus();
             $(img).css('transform', 'rotate(' + angle + 'deg)');
             orderBus('search-bus');
+            //var busId = document.getEle(this);
+            //console.log(this.id);
+            var busPoint = this.id;
+            lon.splice(lon.indexOf(busPoint), 1);
+            console.log(lon);
+            //var marker = markers[busPoint]; // find the marker by given id
+            //marker.setMap(null);
+            //addBusToList();
         }
     });
 

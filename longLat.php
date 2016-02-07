@@ -1,6 +1,7 @@
 <?php
 //header('Content-type: application/json');
 $json = $_POST['lines'];
+//echo $json;
 //$json = json_decode($json, true);
 //print_r($json);
 //$json = [22];
