@@ -42,6 +42,6 @@
 <!--<div id="map"></div>-->
 <?php include_once "side-links.php"; ?>
 <div id="map_canvas"></div>
-<script src="js/script.js"></script>
+<script src="js/map.js"></script>
 </body>
 </html>

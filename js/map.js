@@ -58,8 +58,6 @@ function addBusToList(busId) {
     //});
 
 
-//var lon = [];
-
     if (lon.length > 0) {
 
         (function worker() {
