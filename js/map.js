@@ -6,7 +6,7 @@
 //	[152, 38.7755940,-9.1353670],
 //  [12, 12.0733335, 52.8234367],
 //];
-//var markers =[];
+var markera = [];
 var ln = "../images/android-locate.svg";
 ln = '../images/ios-circle-filled.svg';
 var map = new google.maps.Map(document.getElementById('map_canvas'), {
@@ -43,6 +43,17 @@ if (navigator.geolocation) {
 }
 var bounds = new google.maps.LatLngBounds();
 map.fitBounds(bounds);
+
+function deleteMarkers(markerId) {
+    for (var i = 0; i < markera.length; i++) {
+        if(markera[i].id == markerId) {
+            markera[i].setMap(null);
+        }else {
+            //continue;
+        }
+    }
+    markera = [];
+}
 
 var lon = [];
 function addBusToList(busId) {
@@ -209,16 +220,19 @@ function addBusToList(busId) {
 
                 //bounds.extend(pos);
 
-                new google.maps.Marker({
+                var markerz = new google.maps.Marker({
                     position: pos,
                     map: map,
                     icon: src,
                     id: point[0]
                 });
+                markera.push(markerz);
             });
             //console.log('good');
-
         });
+        for (var i = 0; i < markera.length; i++) {
+            markera[i].setMap(map);
+        }
 
         //map.fitBounds(bounds);
 

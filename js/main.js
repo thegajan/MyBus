@@ -77,6 +77,7 @@ $(document).ready(function () {
             var busPoint = this.id;
             lon.splice(lon.indexOf(busPoint), 1);
             console.log(lon);
+            deleteMarkers(this.id);
             //var marker = markers[busPoint]; // find the marker by given id
             //marker.setMap(null);
             //addBusToList();
